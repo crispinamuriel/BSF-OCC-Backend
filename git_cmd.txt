@@ -8,3 +8,24 @@ git config user.email - to check email
 Creating Git Repos
 
 git init - to create a git repository
+
+git commit -m 'commit message'
+git status
+git add <filename>
+git add .
+git rm <filename>
+git log
+
+Committing
+
+git status - shows which files are in the staging area
+git add filename - stages file
+git commit -m "commit message" - committing files in the staging area
+git rm --cached filename - removes a file from staging area
+
+git log --oneline
+
+git branch <branchName>
+git branch -a
+git checkout <branchName>
+git switch <branchName>
