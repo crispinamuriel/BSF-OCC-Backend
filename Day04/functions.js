@@ -12,11 +12,11 @@ function greet() {
 //Calling a function
 greet();
 
-//Function declaration
+//Function declaration is hoisted
 function functionDeclaration() {
   console.log('Hello! I am a function declaration!');
 }
-// Function expression
+// Function expression is not hoisted
 
 const myFunction = () => {
   console.log('Hello, I am a function expression');
