@@ -1,0 +1,50 @@
+MongoDB in Atlas => get connection string from created Database in the cloud 
+MongoDB in Compass => on our local we can use the connection string to connect to the cloud database 
+
+
+insertONe, insertMany, updateOne, updateMany, DeleteOne, deleteMany, update
+
+
+MongoSH in the console we can create some collections and
+db.collection.insertOne({"key":"value"})
+db.collectionName.insertMany([{"key": "value}, {"key": "value"}]);
+
+READ documents
+db.collectionName.find() => returns all items inside db
+db.collectionName.find().limit(3); => shows only 3!? 
+db.collectionName.fidn({"field": "value"}) => finds documents with specified fields and values
+db.users.find.sort({"username": 1});
+db.collectionName.fiind().sort({"field": 1}); => sorts 1: ascending, -1 in descending order
+
+db.collectionName.updateOne({"searchField": "searchValue}, { $set: {"setField": "setValue"}}); => updates one document with the specified field and value
+db.collectionName.updateMany({"searchField": "searchValue"}, { $set: {"setField": "setValue"}}); update multiple documents
+
+DELETE documents 
+db.users.deleteOne({"username": "mike_jones"})
+db.users.deleteMany({"status": "inactive"});
+db.users.deleteMany({}); => deletes all records
+
+Comparison Operators!
+db.users.find({ "age": { $eq: 20 }});
+db.users.find({ "age": { $ne: 20 }});
+db.users.find({ "age": { $gt: 20 }});
+db.users.find({ "age": { $lt: 20 }});
+db.users.find({ "age": { $gte: 20 }});
+db.users.find({ "age": { $lte: 20 }});
+
+$eq = equal to
+$ne = not equal to
+$gt = greater than
+$lt = less than
+$gte = greater than or equal to
+$lte = less than or equal to
+$and = &&
+$or = ||
+
+// find users with status active and age is greater than or equal to 18
+db.users.find({ $and: [ {"status": "active"}, {"age": { $gte: 18}}]})
+
+// find users with status of inactive or the age is greater than or equal to 18
+db.users.find({ $or: [ { "status": "inactive" }, { "age": { $gte: 18 }}]});
+
+
