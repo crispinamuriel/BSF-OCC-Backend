@@ -1,0 +1,20 @@
+Src - holds our source code
+controllers -
+models - 
+Routes - Responsible for backend routing system, guides our workflow db -> controller -> etc
+middleware - 
+server.js - holds instance of our db
+
+npm init --y
+npm install express
+npm install mongoose (mongodb in the backend!)
+npm install dotenv
+
+--- for authentication with Jason Web Token --- 
+npm install jsonwebtoken
+npm install bcrypt
+
+Structure of a JSON Web Token (JWT)
+Header => { "alg": "HS246", "typ": "JWT" }
+Payload => { "sub": "12334", "name": "CMuriel", "admin": true, "iat": 1234567 }
+Signature => Base64URLSafe(HMACSHA256(<header>, <payload>, <secret key>));
